@@ -62,9 +62,4 @@ def game():
                 game()
             else:
                 print("Goodbye !")
-
-    
-
-
-
 game()
