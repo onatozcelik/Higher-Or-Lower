@@ -54,6 +54,7 @@ def game():
         guess_correct= check_guess(guess,account1_followers,account2_followers)
         if guess_correct:
             score +=1
+            console_clear()
             print(f"Correct ! Current Score: {score}")
         else:
             game_continue=False
