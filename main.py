@@ -2,8 +2,13 @@
 from art import logo,vs
 from game_data import data
 import random as rd
+import os
 GAME_DATA=data
 VERSUS_ART = vs
+
+def console_clear() -> None:
+    """Clears Console"""
+    os.system("clear") if os.name == "posix" else os.system("cls")
 
 def select_account(data=GAME_DATA):
     """Select and Return Random Account"""
@@ -24,6 +29,7 @@ def print_versus(account_1,account_2,versus=VERSUS_ART):
     return input("Which has more followers A or B ? \n").upper()
 
 def check_guess(guess,account1_followers,account2_followers):
+    """Compares user guess with actual followers and returns true or false"""
     if account1_followers> account2_followers:
         return guess=='A'
     elif account2_followers > account1_followers:
@@ -31,6 +37,7 @@ def check_guess(guess,account1_followers,account2_followers):
 
 
 def game():
+    console_clear()
     print(logo)
     game_continue = True
     score=0
